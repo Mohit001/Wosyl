@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.keshyam.wosyl.R;
+import com.keshyam.wosyl.userfragment.PendingListFragment;
 import com.keshyam.wosyl.userfragment.UserNewRideFragment;
 import com.keshyam.wosyl.util.Utility;
 
@@ -70,11 +71,23 @@ public class UserMainActivity extends Activity implements View.OnClickListener
                 Utility.showAlertMessage(this, "Location click");
                 break;
             case R.id.home_lbl:
-                Utility.showAlertMessage(this, "home click");
+//                Utility.showAlertMessage(this, "home click");
+                if(getFragmentManager().findFragmentByTag(UserNewRideFragment.TAG) == null)
+                {
+
+                    getFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.content_frame, new UserNewRideFragment(), UserNewRideFragment.TAG)
+                            .commit();
+                }
                 customMenu.closeMenu();
                 break;
             case R.id.pending_lbl:
-                Utility.showAlertMessage(this, "pending click");
+//                Utility.showAlertMessage(this, "pending click");
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.content_frame, new PendingListFragment(), PendingListFragment.TAG)
+                        .commit();
                 customMenu.closeMenu();
                 break;
             case R.id.setting_lbl:

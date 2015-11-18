@@ -31,7 +31,7 @@ public class UserNewRideFragment extends Fragment implements OnMapReadyCallback,
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         View rootView = inflater.inflate(R.layout.fragment_find_nearby_taxi, container, false);
-        mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
+        mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.gmap);
         ((Button) rootView.findViewById(R.id.next_btn)).setOnClickListener(this);
         return rootView;
     }
