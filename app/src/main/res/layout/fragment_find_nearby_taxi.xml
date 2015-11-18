@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextView
+        android:text="This is test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <fragment
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:id="@+id/map"
+              android:name="com.google.android.gms.maps.MapFragment"/>
+
+    <RelativeLayout
+        android:id="@+id/user_find_nearby_taxi_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:id="@+id/next_btn"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Wosyl"
+            android:background="@drawable/btn_round_corner"/>
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/dimn10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_below="@id/next_btn">
+
+            <TextView
+                android:id="@+id/user_find_nearby_taxi_wosyl_bottom_layout_divider"
+                android:layout_width="1dp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="1dp"/>
+            <RelativeLayout
+                android:id="@+id/user_find_nearby_bottom_right"
+                android:gravity="right"
+                android:layout_toRightOf="@id/user_find_nearby_taxi_wosyl_bottom_layout_divider"
+                android:layout_width="match_parent"
+                android:padding="8dp"
+                android:layout_marginLeft="7dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Drivers Nearby : "
+                    android:id="@+id/driver_nearby_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="2"
+                    android:id="@+id/driver_nearby_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/driver_nearby_lbl"/>
+
+                <TextView
+                    android:text="Avg Wait Time : "
+                    android:id="@+id/avg_waiting_time_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/driver_nearby_lbl"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="2 min"
+                    android:layout_below="@id/driver_nearby_lbl"
+                    android:id="@+id/avg_waiting_time_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/avg_waiting_time_lbl"/>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/user_find_nearby_taxi_wosyl_bottom_left"
+                android:gravity="left"
+                android:layout_toLeftOf="@id/user_find_nearby_taxi_wosyl_bottom_layout_divider"
+                android:layout_width="match_parent"
+                android:padding="8dp"
+                android:layout_alignTop="@id/user_find_nearby_bottom_right"
+                android:layout_alignBottom="@id/user_find_nearby_bottom_right"
+                android:layout_marginRight="7dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/user_find_nearby_bottom_left_location_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_user_back"/>
+                <TextView
+                    android:textSize="10sp"
+                    android:text="My currant location address"
+                    android:layout_toRightOf="@id/user_find_nearby_bottom_left_location_icon"
+                    android:layout_marginLeft="4dp"
+                    android:id="@+id/currant_location_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:background="@color/user_background"
+                android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/signup_back"
+        android:src="@drawable/ic_user_back"
+        android:layout_marginTop="@dimen/dimn18"
+        android:layout_marginLeft="@dimen/dimn14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/wosyl_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimn10"
+        android:src="@drawable/abc_btn_rating_star_on_mtrl_alpha"/>
+
+    <ImageView
+        android:id="@+id/collect_address_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/wosyl_logo"
+        android:layout_marginTop="@dimen/dimn10"
+        android:src="@drawable/abc_btn_rating_star_on_mtrl_alpha"/>
+
+    <TextView
+        android:id="@+id/colloct_address_lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pick Up Info"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/collect_address_progress"
+        android:layout_marginTop="@dimen/dimn10"
+        />
+
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/colloct_address_lbl"
+        android:layout_marginLeft="@dimen/dimn18"
+        android:layout_marginRight="@dimen/dimn18"
+        android:layout_marginTop="@dimen/dimn26"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/colloct_address_source"
+            android:layout_width="match_parent"
+            android:inputType="text"
+            android:hint="Pickup Address"
+            android:textColorHint="@android:color/white"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:drawableLeft="@drawable/ic_name_left"
+            android:background="@drawable/input_round_corner"
+            android:layout_height="48dp"/>
+
+        <EditText
+            android:id="@+id/colloct_address_destination"
+            android:layout_width="match_parent"
+            android:inputType="text"
+            android:hint="Delivery Address"
+            android:textColorHint="@android:color/white"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:drawableLeft="@drawable/ic_name_left"
+            android:background="@drawable/input_round_corner"
+            android:layout_below="@id/colloct_address_source"
+            android:layout_marginTop="@dimen/dimn14"
+            android:layout_height="48dp"/>
+
+        <EditText
+            android:id="@+id/colloct_address_items"
+            android:layout_width="match_parent"
+            android:inputType="number|phone"
+            android:hint="Items"
+            android:textColorHint="@android:color/white"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:drawableLeft="@drawable/ic_action_lock_outline"
+            android:background="@drawable/input_round_corner"
+            android:layout_below="@id/colloct_address_destination"
+            android:layout_marginTop="@dimen/dimn14"
+            android:layout_height="48dp"/>
+
+        <EditText
+            android:id="@+id/colloct_address_notes"
+            android:layout_width="match_parent"
+            android:hint="Notes"
+            android:textColorHint="@android:color/white"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:drawableLeft="@drawable/ic_action_lock_outline"
+            android:background="@drawable/input_round_corner"
+            android:layout_below="@id/colloct_address_items"
+            android:layout_marginTop="@dimen/dimn14"
+            android:layout_height="48dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:id="@+id/next_btn"
+            android:layout_above="@id/terms_and_condition"
+            android:background="@drawable/blue_round_corner_solid"
+            android:layout_marginLeft="@dimen/dimn18"
+            android:layout_marginRight="@dimen/dimn18"
+            android:text="@string/next"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:layout_marginTop="@dimen/dimn18"
+            android:layout_below="@id/colloct_address_notes"
+            android:layout_marginBottom="20dp"/>
+    </RelativeLayout>
+</RelativeLayout>

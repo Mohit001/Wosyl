@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:background="@color/user_background"
+              android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/back_image_btn"
+        android:src="@drawable/ic_user_back"
+        android:layout_marginTop="@dimen/dimn18"
+        android:layout_marginLeft="@dimen/dimn10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:id="@+id/signup_progress"
+        android:layout_below="@id/back_image_btn"
+        android:layout_marginTop="@dimen/dimn10"
+        android:src="@drawable/abc_btn_rating_star_on_mtrl_alpha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/payment_type_lbl"
+        android:layout_width="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:text="Payment Type"
+        android:layout_below="@id/signup_progress"
+        android:layout_height="wrap_content"/>
+
+
+    <LinearLayout
+        android:id="@+id/payment_type_bottom_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="@dimen/dimn10"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dimn14"
+        android:paddingRight="@dimen/dimn10">
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:id="@+id/next_btn"
+            android:layout_marginTop="@dimen/dimn14"
+            android:background="@drawable/blue_round_corner_solid"
+            android:text="@string/next"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/terms_and_condition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tnc"
+            android:textColor="@color/text_lite_grey"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:paddingLeft="@dimen/dimn10"
+        android:paddingRight="@dimen/dimn10"
+        android:layout_marginTop="@dimen/dimn22"
+        android:orientation="vertical"
+        android:layout_above="@id/payment_type_bottom_ll"
+        android:layout_below="@id/payment_type_lbl"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/payment_type_paypal"
+            android:layout_width="match_parent"
+            android:text="PayPal"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:gravity="center"
+            android:background="@drawable/input_round_corner"
+            android:layout_marginTop="@dimen/dimn14"
+            android:layout_height="36dp"/>
+
+        <TextView
+            android:id="@+id/payment_type_visa"
+            android:layout_width="match_parent"
+            android:text="Visa"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:gravity="center"
+            android:background="@drawable/input_round_corner"
+            android:layout_marginTop="@dimen/dimn14"
+            android:layout_height="36dp"/>
+
+        <TextView
+            android:id="@+id/payment_type_master_catrd"
+            android:layout_width="match_parent"
+            android:text="Master Card"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:gravity="center"
+            android:background="@drawable/input_round_corner"
+            android:layout_marginTop="@dimen/dimn14"
+            android:layout_height="36dp"/>
+
+        <TextView
+            android:id="@+id/payment_type_amex"
+            android:layout_width="match_parent"
+            android:text="AMEX"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:gravity="center"
+            android:background="@drawable/input_round_corner"
+            android:layout_marginTop="@dimen/dimn14"
+            android:layout_height="36dp"/>
+    </LinearLayout>
+</RelativeLayout>
