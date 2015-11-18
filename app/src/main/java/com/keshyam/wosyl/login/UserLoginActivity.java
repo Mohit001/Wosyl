@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.keshyam.wosyl.R;
-import com.keshyam.wosyl.userhome.UserMainActivity;
+import com.keshyam.wosyl.useractivity.UserMainActivity;
 import com.keshyam.wosyl.usersignup.UserSignupActivity;
 import com.keshyam.wosyl.util.Utility;
 

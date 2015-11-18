@@ -1,4 +1,4 @@
-package com.keshyam.wosyl.userhome;
+package com.keshyam.wosyl.useractivity;
 
 import android.app.Activity;
 import android.os.Bundle;

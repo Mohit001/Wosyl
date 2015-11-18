@@ -1,6 +1,7 @@
 package com.keshyam.wosyl.userfragment;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.keshyam.wosyl.R;
+import com.keshyam.wosyl.useractivity.ActivityNewRide;
 
 /**
  * Created by Liger on 11/17/2015.
@@ -56,10 +58,7 @@ public class UserNewRideFragment extends Fragment implements OnMapReadyCallback,
         switch (v.getId())
         {
             case R.id.next_btn:
-                getFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.content_frame, new UserCollectDeliveryAddressFragmnet(), UserCollectDeliveryAddressFragmnet.TAG)
-                        .commit();
+                startActivity(new Intent(getActivity(), ActivityNewRide.class));
                 break;
         }
     }

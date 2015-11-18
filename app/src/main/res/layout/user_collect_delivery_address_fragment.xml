@@ -6,7 +6,7 @@
 
 
     <ImageView
-        android:id="@+id/signup_back"
+        android:id="@+id/back_image_btn"
         android:src="@drawable/ic_user_back"
         android:layout_marginTop="@dimen/dimn18"
         android:layout_marginLeft="@dimen/dimn14"

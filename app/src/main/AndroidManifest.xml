@@ -48,10 +48,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".userhome.UserMainActivity"
+            android:name=".useractivity.UserMainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity android:name=".useractivity.ActivityNewRide"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".usersignup.UserSignupActivity"
             android:screenOrientation="portrait"

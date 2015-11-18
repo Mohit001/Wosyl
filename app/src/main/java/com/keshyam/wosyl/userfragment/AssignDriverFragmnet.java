@@ -10,22 +10,25 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.keshyam.wosyl.R;
+import com.keshyam.wosyl.util.Utility;
 
 /**
  * Created by Liger on 11/18/2015.
  */
-public class UserCollectDeliveryAddressFragmnet extends Fragment implements View.OnClickListener
+public class AssignDriverFragmnet extends Fragment implements View.OnClickListener
 {
 
-    public static String TAG = UserCollectDeliveryAddressFragmnet.class.getSimpleName();
+    public static String TAG = AssignDriverFragmnet.class.getSimpleName();
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        View rootView = inflater.inflate(R.layout.user_collect_delivery_address_fragment, container, false);
+        View rootView = inflater.inflate(R.layout.assign_driver_fragment, container, false);
         ((Button) rootView.findViewById(R.id.next_btn)).setOnClickListener(this);
+        ((Button) rootView.findViewById(R.id.no_btn)).setOnClickListener(this);
         ((ImageView) rootView.findViewById(R.id.back_image_btn)).setOnClickListener(this);
+
         return rootView;
 
     }
@@ -39,11 +42,17 @@ public class UserCollectDeliveryAddressFragmnet extends Fragment implements View
 //                Utility.showAlertMessage(getActivity(), "next clicked");
                 getFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.newride_content_frame, new AssignDriverFragmnet(), AssignDriverFragmnet.TAG)
+                        .replace(R.id.newride_content_frame, new OrderVericicationFragment(), OrderVericicationFragment.TAG)
                         .commit();
                 break;
+            case R.id.no_btn:
+                Utility.showAlertMessage(getActivity(), "Reassign Driver");
+                break;
             case R.id.back_image_btn:
-                getActivity().finish();
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.newride_content_frame, new UserCollectDeliveryAddressFragmnet(), UserCollectDeliveryAddressFragmnet.TAG)
+                        .commit();
                 break;
         }
     }

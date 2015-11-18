@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+    android:background="@color/user_background">
+
+    <ImageView
+        android:id="@+id/back_image_btn"
+        android:src="@drawable/ic_user_back"
+        android:layout_marginTop="@dimen/dimn18"
+        android:layout_marginLeft="@dimen/dimn14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/wosyl_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimn10"
+        android:src="@drawable/abc_btn_rating_star_on_mtrl_alpha"/>
+
+    <ImageView
+        android:id="@+id/collect_address_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/wosyl_logo"
+        android:layout_marginTop="@dimen/dimn10"
+        android:src="@drawable/abc_btn_rating_star_on_mtrl_alpha"/>
+
+    <TextView
+        android:id="@+id/order_verification_lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Verification"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/collect_address_progress"
+        android:layout_marginTop="@dimen/dimn10"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/next_btn"
+        android:layout_above="@id/terms_and_condition"
+        android:background="@drawable/blue_round_corner_solid"
+        android:layout_marginLeft="@dimen/dimn18"
+        android:layout_marginRight="@dimen/dimn18"
+        android:text="WosyI"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/dimn10"
+        android:layout_marginBottom="@dimen/dimn10"/>
+
+    <RelativeLayout
+        android:layout_below="@id/order_verification_lbl"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dimn10"
+        android:layout_marginLeft="@dimen/dimn22"
+        android:layout_marginRight="@dimen/dimn22"
+        android:layout_above="@id/next_btn"
+        android:layout_height="match_parent">
+        
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:background="@drawable/blue_round_corner_solid"
+            android:layout_height="80dp">
+
+            <LinearLayout
+                android:id="@+id/order_confirmation_orderid_ll"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="17dp"
+                android:padding="8dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/order_confirmation_orderid_lbl"
+                    android:textColor="@color/white"
+                    android:text="Order Id"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/order_confirmation_orderid_content"
+                    android:textColor="@color/white"
+                    android:text="Abc"
+                    android:layout_marginTop="8dp"
+                    android:textStyle="bold"
+                    android:maxLines="2"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/order_confirmation_amount_ll"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="17dp"
+                android:padding="8dp"
+                android:gravity="center_horizontal"
+                android:background="@color/user_background"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/order_confirmation_amount_lbl"
+                    android:textColor="@color/white"
+                    android:text="Amount"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/order_confirmation_amount_content"
+                    android:textColor="@color/white"
+                    android:text="$8.85"
+                    android:layout_marginTop="8dp"
+                    android:textStyle="bold"
+                    android:singleLine="true"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/order_confirmation_items_ll"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="17dp"
+                android:padding="8dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/order_confirmation_items_lbl"
+                    android:textColor="@color/white"
+                    android:text="Iems"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/order_confirmation_items_content"
+                    android:textColor="@color/white"
+                    android:text="1"
+                    android:layout_marginTop="8dp"
+                    android:textStyle="bold"
+                    android:maxLines="2"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_marginTop="57dp"
+            android:background="@drawable/white_round_corner_solid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/user_order_confirmation_day_details_ll"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dimn14"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/user_order_confirmation_dayofweek_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:text="Place On Friday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/user_order_confirmation_custom_datetime_content"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:text="August 8, 2015 at 10:00 am"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/user_order_confirmation_address_details_rl"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginTop="@dimen/dimn10"
+                android:layout_below="@id/user_order_confirmation_day_details_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/order_confirmation_pickup_address_content"
+                    android:textColor="@color/black"
+                    android:gravity="center_horizontal"
+                    android:text="343 sutter st, san fransisco ca"
+                    android:textSize="15sp"
+                    android:maxLines="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/order_confirmation_pickup_to_lbl"
+                    android:textColor="@color/black"
+                    android:gravity="center_horizontal"
+                    android:text="To"
+                    android:textSize="15sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/order_confirmation_delivery_address_content"
+                    android:textColor="@color/black"
+                    android:gravity="center_horizontal"
+                    android:text="150 berry st, san fransisco ca"
+                    android:textSize="15sp"
+                    android:maxLines="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_marginTop="8dp"
+                android:layout_below="@id/user_order_confirmation_address_details_rl"
+                android:id="@+id/centerline_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_centerVertical="true"
+                    android:background="@color/user_back_blue"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_weight="1"
+                            android:textColor="@color/black"
+                            android:background="@drawable/ic_user_back"
+                            android:gravity="center_horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_height="wrap_content"/>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:gravity="center_horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                    <RelativeLayout
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_weight="1"
+                            android:textColor="@color/black"
+                            android:background="@drawable/ic_user_back"
+                            android:gravity="center_horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_height="wrap_content"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/user_order_confirmation_distance_content"
+                android:layout_marginTop="@dimen/dimn14"
+                android:text="1.9 Miles"
+                android:layout_below="@id/centerline_rl"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/user_back_blue"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/user_order_confirmation_fare_rates_lbl"
+                android:layout_marginTop="@dimen/dimn14"
+                android:text="$6.0/base + $1.5/mile"
+                android:layout_below="@id/user_order_confirmation_distance_content"
+                android:textSize="15sp"
+                android:textColor="@color/user_back_blue"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
