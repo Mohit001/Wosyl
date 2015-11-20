@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.keshyam.wosyl.R;
 import com.keshyam.wosyl.util.Utility;
@@ -17,7 +18,9 @@ import com.keshyam.wosyl.util.Utility;
 public class UserPendingDetailsFragment extends Fragment implements View.OnClickListener
 {
     public static String TAG = UserPendingDetailsFragment.class.getSimpleName();
-    ImageView callImageView, messageImageView, trackImageView, cancelImageView;
+    ImageView callImageView, messageImageView, trackImageView, cancelImageView, backImageView;
+    ImageView noCancelDialogImageView, yesCancelDialogImageView;
+    RelativeLayout cancelDialogRelativeLayout;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -27,6 +30,10 @@ public class UserPendingDetailsFragment extends Fragment implements View.OnClick
         messageImageView = (ImageView) rootView.findViewById(R.id.message_image);
         trackImageView = (ImageView) rootView.findViewById(R.id.currant_location_image);
         cancelImageView = (ImageView) rootView.findViewById(R.id.cancel_request_image);
+        backImageView = (ImageView) rootView.findViewById(R.id.back_image_btn);
+        noCancelDialogImageView = (ImageView) rootView.findViewById(R.id.no_btn);
+        yesCancelDialogImageView = (ImageView) rootView.findViewById(R.id.yes_btn);
+        cancelDialogRelativeLayout = (RelativeLayout) rootView.findViewById(R.id.cancel_dialog_rl);
 
         return rootView;
     }
@@ -40,6 +47,11 @@ public class UserPendingDetailsFragment extends Fragment implements View.OnClick
         messageImageView.setOnClickListener(this);
         trackImageView.setOnClickListener(this);
         cancelImageView.setOnClickListener(this);
+        backImageView.setOnClickListener(this);
+
+
+        // enable cancel dialog RL if status is pending/confirmed
+        // default status is gone
     }
 
     @Override
@@ -59,6 +71,15 @@ public class UserPendingDetailsFragment extends Fragment implements View.OnClick
                 break;
             case R.id.cancel_request_image:
                 Utility.showAlertMessage(getActivity(), "Cancel request");
+                break;
+            case R.id.back_image_btn:
+                getActivity().finish();
+                break;
+            case R.id.no_btn:
+                Utility.showAlertMessage(getActivity(), "cancel dialog no clciked");
+                break;
+            case R.id.yes_btn:
+                Utility.showAlertMessage(getActivity(), "cancel dialog yes clciked");
                 break;
 
         }

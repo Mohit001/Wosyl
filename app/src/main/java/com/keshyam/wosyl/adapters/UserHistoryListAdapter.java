@@ -82,8 +82,8 @@ public class UserHistoryListAdapter extends ArrayAdapter<History>
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.orderIDTextView.setText("Order ID : " + getItem(position).getTitle());
-        holder.orderIDTextView.setText("Order ID : " + getItem(position).getCount());
+        holder.orderIDTextView.setText(getItem(position).getTitle());
+        holder.countTextView.setText(getItem(position).getCount());
         return convertView;
     }
 

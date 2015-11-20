@@ -4,12 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import com.keshyam.wosyl.R;
-import com.keshyam.wosyl.userfragment.UserPendingDetailsFragment;
+import com.keshyam.wosyl.userfragment.UserHistoryDetailsFragment;
 
 /**
  * Created by Liger on 11/19/2015.
  */
-public class ActivityUserPendingRequest extends Activity
+public class ActivityUserHistory extends Activity
 {
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -19,7 +19,7 @@ public class ActivityUserPendingRequest extends Activity
 
         getFragmentManager()
                 .beginTransaction()
-                .replace(R.id.newride_content_frame, new UserPendingDetailsFragment(), UserPendingDetailsFragment.TAG)
+                .replace(R.id.newride_content_frame, new UserHistoryDetailsFragment(), UserHistoryDetailsFragment.TAG)
                 .commit();
     }
 }

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout
+              android:orientation="vertical"
+              android:background="@color/user_background"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/back_image_btn"
+        android:src="@drawable/ic_user_back"
+        android:layout_marginTop="@dimen/dimn18"
+        android:layout_marginLeft="@dimen/dimn14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/wosyl_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimn10"
+        android:src="@drawable/abc_btn_rating_star_on_mtrl_alpha"/>
+
+    <TextView
+        android:id="@+id/orderid_content"
+        android:text="Order Id: 1"
+        android:layout_below="@id/wosyl_logo"
+        android:layout_marginTop="@dimen/dimn10"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/driver_profile_image"
+        android:src="@drawable/ic_user_back"
+        android:scaleType="fitXY"
+        android:layout_below="@id/orderid_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"/>
+
+    <TextView
+        android:id="@+id/driver_name_content"
+        android:text="Name"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_below="@id/driver_profile_image"
+        android:textSize="10sp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:id="@+id/assign_driver_rating_lbl"
+        android:text="5.0"
+        android:drawableRight="@drawable/ic_user_back"
+        android:textColor="@color/white"
+        android:layout_below="@id/driver_name_content"
+        android:gravity="center_vertical"
+        android:textSize="15sp"
+        android:layout_marginTop="6dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:id="@+id/driver_vehicle_type"
+        android:layout_below="@id/assign_driver_rating_lbl"
+        android:textSize="13sp"
+        android:textColor="@color/white"
+        android:text="Vechicle Type"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <RatingBar
+        android:id="@+id/ratingbar"
+        android:max="5"
+        android:layout_below="@id/driver_vehicle_type"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:rating="3"
+        style="@android:style/Widget.Holo.Light.RatingBar"
+        android:isIndicator="false"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/review_content"
+        android:layout_below="@id/ratingbar"
+        android:layout_marginLeft="@dimen/dimn22"
+        android:layout_marginRight="@dimen/dimn22"
+        android:minHeight="100dp"
+        android:hint="Leave a commet(optional)"
+        android:gravity="center"
+        android:background="@drawable/white_round_corner_solid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@drawable/blue_round_corner_solid"
+        android:layout_below="@id/review_content"
+        android:textSize="13sp"
+        android:textColor="@color/white"
+        android:text="Confirm"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:layout_marginLeft="@dimen/dimn22"
+        android:layout_marginRight="@dimen/dimn22"
+        android:layout_marginBottom="@dimen/dimn14"
+        android:layout_marginTop="@dimen/dimn14"/>
+
+</RelativeLayout>
+</ScrollView>

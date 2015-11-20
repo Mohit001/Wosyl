@@ -15,7 +15,7 @@ import android.widget.ListView;
 import com.keshyam.wosyl.R;
 import com.keshyam.wosyl.adapters.UserHistoryListAdapter;
 import com.keshyam.wosyl.model.History;
-import com.keshyam.wosyl.useractivity.ActivityUserPendingRequest;
+import com.keshyam.wosyl.useractivity.ActivityUserHistory;
 
 import java.util.ArrayList;
 
@@ -52,7 +52,7 @@ public class HistoryDateOrderListFragment extends Fragment implements AdapterVie
     public void onItemClick(AdapterView<?> parent, View view, int position, long id)
     {
 //        Utility.showAlertMessage(mContext, "order "+position+" clicked");
-        startActivity(new Intent(getActivity(), ActivityUserPendingRequest.class));
+        startActivity(new Intent(getActivity(), ActivityUserHistory.class));
     }
 
     private class GetPendingRequestAsync extends AsyncTask<Void, Void, String>

@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.keshyam.wosyl.R;
 import com.keshyam.wosyl.adapters.UserHistoryListAdapter;
@@ -24,15 +25,18 @@ public class HistoryDateListFragment extends Fragment implements AdapterView.OnI
 {
     public static String TAG = HistoryDateListFragment.class.getSimpleName();
     private ArrayList<History> arrayList;
-    private ListView pendingListView;
+    private ListView historyDateListView;
     private UserHistoryListAdapter adapter;
     private Context mContext;
+    private TextView screenLabelTextView;
+    
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         View rootView = inflater.inflate(R.layout.fragment_pending_list, container, false);
-        pendingListView = (ListView) rootView.findViewById(R.id.user_pending_listview);
+        historyDateListView = (ListView) rootView.findViewById(R.id.user_pending_listview);
+        screenLabelTextView = (TextView) rootView.findViewById(R.id.user_pending_lbl);
         return rootView;
     }
 
@@ -42,7 +46,8 @@ public class HistoryDateListFragment extends Fragment implements AdapterView.OnI
         super.onActivityCreated(savedInstanceState);
 
         mContext = getActivity();
-        pendingListView.setOnItemClickListener(this);
+        screenLabelTextView.setText("Complected");
+        historyDateListView.setOnItemClickListener(this);
         new GetPendingRequestAsync().execute();
     }
 
@@ -92,7 +97,7 @@ public class HistoryDateListFragment extends Fragment implements AdapterView.OnI
             }
 
             adapter = new UserHistoryListAdapter(mContext, R.layout.user_pending_listview_raw, arrayList, getActivity().getLayoutInflater());
-            pendingListView.setAdapter(adapter);
+            historyDateListView.setAdapter(adapter);
 
         }
 
