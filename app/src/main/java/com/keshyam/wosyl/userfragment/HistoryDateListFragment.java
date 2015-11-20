@@ -2,7 +2,6 @@ package com.keshyam.wosyl.userfragment;
 
 import android.app.Fragment;
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,20 +12,20 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.keshyam.wosyl.R;
-import com.keshyam.wosyl.adapters.UserPendingListAdapter;
-import com.keshyam.wosyl.useractivity.ActivityUserPendingRequest;
+import com.keshyam.wosyl.adapters.UserHistoryListAdapter;
+import com.keshyam.wosyl.model.History;
 
 import java.util.ArrayList;
 
 /**
  * Created by Liger on 11/18/2015.
  */
-public class PendingListFragment extends Fragment implements AdapterView.OnItemClickListener
+public class HistoryDateListFragment extends Fragment implements AdapterView.OnItemClickListener
 {
-    public static String TAG = PendingListFragment.class.getSimpleName();
-    private ArrayList<String> arrayList;
+    public static String TAG = HistoryDateListFragment.class.getSimpleName();
+    private ArrayList<History> arrayList;
     private ListView pendingListView;
-    private UserPendingListAdapter adapter;
+    private UserHistoryListAdapter adapter;
     private Context mContext;
     @Nullable
     @Override
@@ -51,7 +50,11 @@ public class PendingListFragment extends Fragment implements AdapterView.OnItemC
     public void onItemClick(AdapterView<?> parent, View view, int position, long id)
     {
 //        Utility.showAlertMessage(mContext, "order "+position+" clicked");
-        startActivity(new Intent(getActivity(), ActivityUserPendingRequest.class));
+//        startActivity(new Intent(getActivity(), ActivityUserPendingRequest.class));
+        getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.content_frame, new HistoryDateOrderListFragment(), HistoryDateOrderListFragment.TAG)
+                .commit();
     }
 
     private class GetPendingRequestAsync extends AsyncTask<Void, Void, String>
@@ -79,12 +82,16 @@ public class PendingListFragment extends Fragment implements AdapterView.OnItemC
             }
 
             arrayList = new ArrayList<>();
+            History history;
             for(int i=0; i<5; i++)
             {
-                arrayList.add("id"+i);
+                history = new History();
+                history.setTitle("date"+i);
+                history.setCount(""+i);
+                arrayList.add(history);
             }
 
-            adapter = new UserPendingListAdapter(mContext, R.layout.user_pending_listview_raw, arrayList, getActivity().getLayoutInflater());
+            adapter = new UserHistoryListAdapter(mContext, R.layout.user_pending_listview_raw, arrayList, getActivity().getLayoutInflater());
             pendingListView.setAdapter(adapter);
 
         }

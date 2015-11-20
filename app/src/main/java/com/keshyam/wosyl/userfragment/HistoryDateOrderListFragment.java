@@ -13,7 +13,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.keshyam.wosyl.R;
-import com.keshyam.wosyl.adapters.UserPendingListAdapter;
+import com.keshyam.wosyl.adapters.UserHistoryListAdapter;
+import com.keshyam.wosyl.model.History;
 import com.keshyam.wosyl.useractivity.ActivityUserPendingRequest;
 
 import java.util.ArrayList;
@@ -21,12 +22,12 @@ import java.util.ArrayList;
 /**
  * Created by Liger on 11/18/2015.
  */
-public class PendingListFragment extends Fragment implements AdapterView.OnItemClickListener
+public class HistoryDateOrderListFragment extends Fragment implements AdapterView.OnItemClickListener
 {
-    public static String TAG = PendingListFragment.class.getSimpleName();
-    private ArrayList<String> arrayList;
+    public static String TAG = HistoryDateOrderListFragment.class.getSimpleName();
+    private ArrayList<History> arrayList;
     private ListView pendingListView;
-    private UserPendingListAdapter adapter;
+    private UserHistoryListAdapter adapter;
     private Context mContext;
     @Nullable
     @Override
@@ -79,12 +80,16 @@ public class PendingListFragment extends Fragment implements AdapterView.OnItemC
             }
 
             arrayList = new ArrayList<>();
+            History history;
             for(int i=0; i<5; i++)
             {
-                arrayList.add("id"+i);
+                history = new History();
+                history.setTitle("datetime"+i);
+                history.setCount(""+i);
+                arrayList.add(history);
             }
 
-            adapter = new UserPendingListAdapter(mContext, R.layout.user_pending_listview_raw, arrayList, getActivity().getLayoutInflater());
+            adapter = new UserHistoryListAdapter(mContext, R.layout.user_pending_listview_raw, arrayList, getActivity().getLayoutInflater());
             pendingListView.setAdapter(adapter);
 
         }

@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.keshyam.wosyl.R;
+import com.keshyam.wosyl.userfragment.HistoryDateListFragment;
 import com.keshyam.wosyl.userfragment.PendingListFragment;
 import com.keshyam.wosyl.userfragment.UserNewRideFragment;
 import com.keshyam.wosyl.util.Utility;
@@ -47,6 +48,7 @@ public class UserMainActivity extends Activity implements View.OnClickListener
         ((ImageView) findViewById(R.id.currant_location)).setOnClickListener(this);
         ((TextView) findViewById(R.id.home_lbl)).setOnClickListener(this);
         ((TextView) findViewById(R.id.pending_lbl)).setOnClickListener(this);
+        ((TextView) findViewById(R.id.complected_lbl)).setOnClickListener(this);
         ((TextView) findViewById(R.id.setting_lbl)).setOnClickListener(this);
         ((TextView) findViewById(R.id.logout_lbl)).setOnClickListener(this);
 
@@ -90,6 +92,16 @@ public class UserMainActivity extends Activity implements View.OnClickListener
                         .commit();
                 customMenu.closeMenu();
                 break;
+
+            case R.id.complected_lbl:
+//                Utility.showAlertMessage(this, "pending click");
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.content_frame, new HistoryDateListFragment(), HistoryDateListFragment.TAG)
+                        .commit();
+                customMenu.closeMenu();
+                break;
+
             case R.id.setting_lbl:
                 Utility.showAlertMessage(this, "setting click");
                 customMenu.closeMenu();
